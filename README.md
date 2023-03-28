@@ -1,6 +1,6 @@
 ![Snap](https://user-images.githubusercontent.com/113179672/227690292-ba5c339a-276e-4afb-b278-9cafad252692.png)
 
-# _printf() in the C Programming Language
+# _printf() in C Programming Language
 
 This project is about recreating the C library function printf. The function printf sends formatted output to stdout (standard output stream) by formatting the argument(s) passed in and converting the arguments(s) into a character string. This version will be used as _printf.
 
