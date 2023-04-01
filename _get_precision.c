@@ -1,19 +1,17 @@
-/*
- * Auth: Muhammad Baheuddeen - Salma Wagdy
- */
 #include "main.h"
 
 /**
- * _get_precision - Calculates the precision for printing
- * @format: Formatted string in which print the arguments
- * @i: List of arguments to be printed.
- * @list: list of arguments.
+ * _get_precision - get precision.
  *
+ * @format: Formatted string.
+ * @index: index.
+ *
+ * @args: arguments.
  * Return: Precision
  */
-int _get_precision(const char *format, int *i, va_list list)
+int _get_precision(const char *format, int *index, va_list args)
 {
-	int current_i = *i + 1;
+	int current_i = *index + 1;
 	int precision = -1;
 
 	if (format[current_i] != '.')
@@ -31,14 +29,13 @@ int _get_precision(const char *format, int *i, va_list list)
 		else if (format[current_i] == '*')
 		{
 			current_i++;
-			precision = va_arg(list, int);
+			precision = va_arg(args, int);
 			break;
 		}
 		else
 			break;
 	}
-
-	*i = current_i - 1;
+	*index = current_i - 1;
 
 	return (precision);
 }

@@ -1,34 +1,39 @@
-/*
- * Auth: Muhammad Baheuddeen- Salma Wagdy
- */
 #include "main.h"
 
 /**
- * _get_flags - Calculates active flags
- * @format: Formatted string in which to print the arguments
- * @i: take a parameter.
+ * _get_flags - get flags.
+ *
+ * @format_string: string to print the result.
+ * @i: int.
+ *
  * Return: Flags:
  */
-int _get_flags(const char *format, int *i)
+int _get_flags(const char *format_string, int *i)
 {
-	int j, current_i;
+	int first_counter, current_i;
 	int flags = 0;
 	const char flags_char[] = {'-', '+', '0', '#', ' ', '\0'};
-	const int flags_arr[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
+	const int flags_arr[] = {
+		FLAG_FOR_MINUS,
+		FLAG_FOR_PLUS,
+		FLAG_FOR_ZERO,
+		FLAG_FOR_HASH,
+		FLAG_FOR_SPACE,
+		0};
 
-	for (current_i = *i + 1; format[current_i] != '\0'; current_i++)
+	for (current_i = *i + 1; format_string[current_i] != '\0'; current_i++)
 	{
-		for (j = 0; flags_char[j] != '\0'; j++)
-			if (format[current_i] == flags_char[j])
+		for (first_counter = 0; flags_char[first_counter] != '\0'; first_counter++)
+			if (format_string[current_i] == flags_char[first_counter])
 			{
-				flags |= flags_arr[j];
+				flags |= flags_arr[first_counter];
 				break;
 			}
 
-		if (flags_char[j] == 0)
+		if (flags_char[first_counter] == 0)
 			break;
 	}
-
 	*i = current_i - 1;
+
 	return (flags);
 }
