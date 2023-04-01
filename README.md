@@ -11,7 +11,7 @@ This project is about recreating the C library function printf. The function pri
 
 ## Environment
 
-Our printf has been tested on Ubuntu 20.04 , WSL & VirtualBox on Ubuntu via Vagrant(1.9.1).
+Our printf has been tested on Ubuntu 20.04, WSL & VirtualBox on Ubuntu via Vagrant(1.9.1).
 
 ## Format tags
 
